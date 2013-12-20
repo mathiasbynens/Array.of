@@ -20,4 +20,28 @@ assertDeepEquals(Array.of(+Infinity), [+Infinity]);
 assertDeepEquals(Array.of({ '0': 'a', '1': 'b', '2': 'c', 'length': 3 }), [{ '0': 'a', '1': 'b', '2': 'c', 'length': 3 }]);
 assertDeepEquals(Array.of(undefined, null, false, -Infinity, -0, +0, 1, 2, +Infinity), [undefined, null, false, -Infinity, -0, +0, 1, 2, +Infinity]);
 
-// TODO: call, apply
+assertDeepEquals(Array.of.call(null, undefined), [undefined]);
+assertDeepEquals(Array.of.call(null, null), [null]);
+assertDeepEquals(Array.of.call(null, false), [false]);
+assertDeepEquals(Array.of.call(null, -Infinity), [-Infinity]);
+assertDeepEquals(Array.of.call(null, -0), [-0]);
+assertDeepEquals(Array.of.call(null, +0), [+0]);
+assertDeepEquals(Array.of.call(null, 1), [1]);
+assertDeepEquals(Array.of.call(null, 1, 2, 3), [1, 2, 3]);
+assertDeepEquals(Array.of.call(null, +Infinity), [+Infinity]);
+assertDeepEquals(Array.of.call(null, { '0': 'a', '1': 'b', '2': 'c', 'length': 3 }), [{ '0': 'a', '1': 'b', '2': 'c', 'length': 3 }]);
+assertDeepEquals(Array.of.call(null, undefined, null, false, -Infinity, -0, +0, 1, 2, +Infinity), [undefined, null, false, -Infinity, -0, +0, 1, 2, +Infinity]);
+assertDeepEquals(Array.of.call(Object, 1, 2, 3), { '0': 1, '1': 2, '2': 3 });
+
+assertDeepEquals(Array.of.apply(null, [undefined]), [undefined]);
+assertDeepEquals(Array.of.apply(null, [null]), [null]);
+assertDeepEquals(Array.of.apply(null, [false]), [false]);
+assertDeepEquals(Array.of.apply(null, [-Infinity]), [-Infinity]);
+assertDeepEquals(Array.of.apply(null, [-0]), [-0]);
+assertDeepEquals(Array.of.apply(null, [+0]), [+0]);
+assertDeepEquals(Array.of.apply(null, [1]), [1]);
+assertDeepEquals(Array.of.apply(null, [1, 2, 3]), [1, 2, 3]);
+assertDeepEquals(Array.of.apply(null, [+Infinity]), [+Infinity]);
+assertDeepEquals(Array.of.apply(null, [{ '0': 'a', '1': 'b', '2': 'c', 'length': 3 }]), [{ '0': 'a', '1': 'b', '2': 'c', 'length': 3 }]);
+assertDeepEquals(Array.of.apply(null, [undefined, null, false, -Infinity, -0, +0, 1, 2, +Infinity]), [undefined, null, false, -Infinity, -0, +0, 1, 2, +Infinity]);
+assertDeepEquals(Array.of.apply(Object, [1, 2, 3]), { '0': 1, '1': 2, '2': 3 });
