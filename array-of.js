@@ -1,9 +1,26 @@
 /*! http://mths.be/array-of v0.1.0 by @mathias */
 if (!Array.of) {
 	(function() {
-		var slice = [].slice;
+		var isConstructor = function(Constructor) {
+			try {
+				new Constructor();
+				return true;
+			} catch(_) {
+				return false;
+			}
+		};
 		var of = function() {
-			return slice.call(arguments);
+			var items = arguments;
+			var len = items.length;
+			var C = this;
+			var A = isConstructor(C) ? new C(len) : new Array(len);
+			var k = 0;
+			while (k < len) {
+				var kValue = items[k];
+				A[k] = kValue;
+				++k;
+			}
+			return A;
 		};
 		if (Object.defineProperty) {
 			Object.defineProperty(Array, 'of', {
