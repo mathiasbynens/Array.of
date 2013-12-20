@@ -11,16 +11,17 @@ if (!Array.of) {
 		};
 		var of = function() {
 			var items = arguments;
-			var len = items.length;
-			var C = this;
-			var A = isConstructor(C) ? new C(len) : new Array(len);
-			var k = 0;
-			while (k < len) {
-				var kValue = items[k];
-				A[k] = kValue;
-				++k;
+			var length = items.length;
+			var Me = this;
+			var result = isConstructor(Me) ? new Me(length) : new Array(length);
+			var index = 0;
+			var value;
+			while (index < length) {
+				value = items[index];
+				result[index] = value;
+				++index;
 			}
-			return A;
+			return result;
 		};
 		if (Object.defineProperty) {
 			Object.defineProperty(Array, 'of', {
