@@ -1,7 +1,5 @@
 # ES6 `Array.of` polyfill [![Build status](https://travis-ci.org/mathiasbynens/Array.of.png?branch=master)](https://travis-ci.org/mathiasbynens/Array.of)
 
-## WORK IN PROGRESS!
-
 An robust & optimized ES3-compatible polyfill for [the `Array.of` method in ECMAScript 6](http://people.mozilla.org/~jorendorff/es6-draft.html#sec-array.of).
 
 ## Installation
