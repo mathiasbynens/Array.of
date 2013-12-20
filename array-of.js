@@ -1,19 +1,15 @@
 /*! http://mths.be/array-of v0.1.0 by @mathias */
 if (!Array.of) {
 	(function() {
-		var isConstructor = function(Constructor) {
+		var useConstructor = function(Constructor, argument) {
 			try {
-				new Constructor();
-				return true;
-			} catch(_) {
-				return false;
-			}
+				return new Constructor(argument);
+			} catch(_) {}
 		};
 		var of = function() {
 			var items = arguments;
 			var length = items.length;
-			var Me = this;
-			var result = isConstructor(Me) ? new Me(length) : new Array(length);
+			var result = useConstructor(this, length) || new Array(length);
 			var index = 0;
 			var value;
 			while (index < length) {
