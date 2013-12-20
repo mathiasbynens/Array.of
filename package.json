@@ -1,0 +1,42 @@
+{
+	"name": "array.of",
+	"version": "0.1.0",
+	"description": "A robust & optimized `Array.of` polyfill, based on the ECMAScript 6 specification.",
+	"homepage": "http://mths.be/array-of",
+	"main": "array-of.js",
+	"keywords": [
+		"string",
+		"unicode",
+		"es6",
+		"ecmascript",
+		"polyfill"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://mths.be/mit"
+		}
+	],
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "http://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/Array.of.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mathiasbynens/Array.of/issues"
+	},
+	"files": [
+		"LICENSE-MIT.txt",
+		"array-of.js"
+	],
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "node tests/tests.js",
+		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js"
+	}
+}
