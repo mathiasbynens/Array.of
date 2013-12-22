@@ -1,6 +1,7 @@
 /*! http://mths.be/array-of v0.1.0 by @mathias */
 if (!Array.of) {
 	(function() {
+		'use strict';
 		var isConstructor = function(Constructor) {
 			try {
 				new Constructor();
@@ -21,6 +22,7 @@ if (!Array.of) {
 				result[index] = value;
 				++index;
 			}
+			result.length = length;
 			return result;
 		};
 		if (Object.defineProperty) {
