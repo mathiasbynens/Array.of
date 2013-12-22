@@ -53,3 +53,13 @@ var testObject = Object(3); testObject[0] = 1; testObject[1] = 2; testObject[2] 
 assertDeepEquals(Array.of.apply(Object, [1, 2, 3]), testObject);
 assertEquals(Array.of.apply(Object).length, 0);
 assertThrows(function() { Array.of.apply(function() { return Object.freeze({}); }); }, TypeError);
+
+// Ensure no setters are called for the indexes
+Object.defineProperty(Array.prototype, '0', {
+	'set': function(x) {
+		throw Error('Setter called: ' + x);
+	}
+});
+assertDeepEquals(Array.of('abc'), ['abc']);
+assertDeepEquals(Array.of.call(null, 'abc'), ['abc']);
+assertDeepEquals(Array.of.apply(null, ['abc']), ['abc']);

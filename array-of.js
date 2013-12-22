@@ -2,6 +2,7 @@
 if (!Array.of) {
 	(function() {
 		'use strict';
+		var defineProperty = Object.defineProperty;
 		var isConstructor = function(Constructor) {
 			try {
 				new Constructor();
@@ -19,14 +20,23 @@ if (!Array.of) {
 			var value;
 			while (index < length) {
 				value = items[index];
-				result[index] = value;
+				if (defineProperty) {
+					defineProperty(result, index, {
+						'value': value,
+						'writable': true,
+						'enumerable': true,
+						'configurable': true
+					});
+				} else {
+					result[index] = value;
+				}
 				++index;
 			}
 			result.length = length;
 			return result;
 		};
-		if (Object.defineProperty) {
-			Object.defineProperty(Array, 'of', {
+		if (defineProperty) {
+			defineProperty(Array, 'of', {
 				'value': of,
 				'configurable': true,
 				'writable': true
