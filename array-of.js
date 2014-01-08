@@ -2,7 +2,15 @@
 if (!Array.of) {
 	(function() {
 		'use strict';
-		var defineProperty = Object.defineProperty;
+		var defineProperty = (function() {
+			// IE 8 only accepts DOM elements
+			try {
+				var o = {};
+				var func = Object.defineProperty;
+				var result = func(o, o, o) && func;
+			} catch(e) { }
+			return result;
+		}());
 		var isConstructor = function(Constructor) {
 			try {
 				new Constructor();
