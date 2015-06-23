@@ -1,5 +1,6 @@
+sudo: false
 language: node_js
 node_js:
   - "0.10"
-script:
-  "node tests/tests.js"
+  - "0.12"
+  - "iojs"
