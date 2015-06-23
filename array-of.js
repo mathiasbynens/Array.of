@@ -1,4 +1,4 @@
-/*! http://mths.be/array-of v0.1.0 by @mathias */
+/*! https://mths.be/array-of v0.1.0 by @mathias */
 if (!Array.of) {
 	(function() {
 		'use strict';
