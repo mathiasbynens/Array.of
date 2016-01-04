@@ -19,7 +19,7 @@ if (!Array.of) {
 				return false;
 			}
 		};
-		var of = function of () {
+		var of = function of() {
 			var items = arguments;
 			var length = items.length;
 			var Me = this;
