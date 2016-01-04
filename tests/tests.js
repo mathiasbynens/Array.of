@@ -65,3 +65,5 @@ Object.defineProperty(MyType.prototype, '0', {
 	}
 });
 assertDeepEquals(Array.of.call(MyType, 'abc'), { '0': 'abc', 'length': 1 });
+
+assertEquals(Array.of.name, 'of', 'Array#of has name "of"');
