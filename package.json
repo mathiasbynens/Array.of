@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "A robust & optimized `Array.of` polyfill, based on the ECMAScript 6 specification.",
 	"homepage": "https://mths.be/array-of",
-	"main": "array-of.js",
+	"main": "detect.js",
 	"keywords": [
 		"string",
 		"unicode",
@@ -23,7 +23,8 @@
 	"bugs": "https://github.com/mathiasbynens/Array.of/issues",
 	"files": [
 		"LICENSE-MIT.txt",
-		"array-of.js"
+		"array-of.js",
+		"detect.js"
 	],
 	"scripts": {
 		"test": "node tests/tests.js",
