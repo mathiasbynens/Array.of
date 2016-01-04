@@ -26,7 +26,8 @@
 		"array-of.js"
 	],
 	"scripts": {
-		"test": "node tests/tests.js",
+		"test": "npm run tests-only",
+		"tests-only": "node tests/tests.js",
 		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js"
 	}
 }
