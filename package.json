@@ -27,8 +27,13 @@
 		"detect.js"
 	],
 	"scripts": {
-		"test": "npm run tests-only",
+		"test": "npm run lint && npm run tests-only",
 		"tests-only": "node tests/tests.js",
+		"lint": "eslint *.js tests/*.js",
 		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js"
+	},
+	"devDependencies": {
+		"eslint": "^1.10.3",
+		"@ljharb/eslint-config": "^1.6.1"
 	}
 }

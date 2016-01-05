@@ -1,20 +1,19 @@
 /*! https://mths.be/array-of v0.1.0 by @mathias */
-(function() {
+(function () {
 	'use strict';
-	var defineProperty = (function() {
+	var defineProperty = (function () {
 		// IE 8 only supports `Object.defineProperty` on DOM elements
 		try {
 			var object = {};
 			var $defineProperty = Object.defineProperty;
 			var result = $defineProperty(object, object, object) && $defineProperty;
-		} catch(error) {}
+		} catch (error) { /**/ }
 		return result;
 	}());
-	var isConstructor = function(Constructor) {
+	var isConstructor = function isConstructor(Constructor) {
 		try {
-			new Constructor();
-			return true;
-		} catch(_) {
+			return !!new Constructor();
+		} catch (_) {
 			return false;
 		}
 	};
@@ -37,7 +36,7 @@
 			} else {
 				result[index] = value;
 			}
-			++index;
+			index += 1;
 		}
 		result.length = length;
 		return result;

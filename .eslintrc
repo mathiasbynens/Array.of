@@ -1,0 +1,15 @@
+{
+	"root": true,
+
+	"extends": "@ljharb",
+
+	"rules": {
+		"global-require": [0],
+		"max-statements": [2, 14],
+		"no-invalid-this": [0],
+		"no-magic-numbers": [0],
+		"quote-props": [2, "always"],
+		"spaced-comment": [1],
+		"strict": [0]
+	}
+}
