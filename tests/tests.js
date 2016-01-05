@@ -37,7 +37,9 @@ assertDeepEquals(Array.of.call(Object, 1, 2, 3), { '0': 1, '1': 2, '2': 3, 'leng
 var testObject = Object(3); testObject[0] = 1; testObject[1] = 2; testObject[2] = 3; testObject.length = 3;
 assertDeepEquals(Array.of.call(Object, 1, 2, 3), testObject);
 assertEquals(Array.of.call(Object).length, 0);
-assertThrows(function() { Array.of.call(function() { return Object.freeze({}); }); }, TypeError);
+if (Object.freeze) {
+	assertThrows(function () { Array.of.call(function () { return Object.freeze({}); }); }, TypeError);
+}
 
 assertDeepEquals(Array.of.apply(null, ['abc']), ['abc']);
 assertDeepEquals(Array.of.apply(null, [undefined]), [undefined]);
@@ -55,16 +57,21 @@ assertDeepEquals(Array.of.apply(Object, [1, 2, 3]), { '0': 1, '1': 2, '2': 3, 'l
 var testObject = Object(3); testObject[0] = 1; testObject[1] = 2; testObject[2] = 3; testObject.length = 3;
 assertDeepEquals(Array.of.apply(Object, [1, 2, 3]), testObject);
 assertEquals(Array.of.apply(Object).length, 0);
-assertThrows(function() { Array.of.apply(function() { return Object.freeze({}); }); }, TypeError);
+if (Object.freeze) {
+	assertThrows(function () { Array.of.apply(function () { return Object.freeze({}); }); }, TypeError);
+}
 
-// Ensure no setters are called for the indexes
-var MyType = function() {};
-Object.defineProperty(MyType.prototype, '0', {
-	'set': function(x) {
-		throw Error('Setter called: ' + x);
-	}
-});
+if (Object.getOwnPropertyDescriptor && Object.defineProperty) {
+	// Ensure no setters are called for the indexes
+	var MyType = function () {};
+	Object.defineProperty(MyType.prototype, '0', {
+		'set': function (x) {
+			throw Error('Setter called: ' + x);
+		}
+	});
+}
 assertDeepEquals(Array.of.call(MyType, 'abc'), { '0': 'abc', 'length': 1 });
+
 var functionsHaveNames = function f() {}.name === 'f';
 if (functionsHaveNames) {
 	assertEquals(Array.of.name, 'of', 'Array#of has name "of"');
