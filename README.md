@@ -1,30 +1,33 @@
-# ES6 `Array.of` polyfill [![Build status](https://travis-ci.org/mathiasbynens/Array.of.svg?branch=master)](https://travis-ci.org/mathiasbynens/Array.of)
+# array.of <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
 
-An robust & optimized ES3-compatible polyfill for [the `Array.of` method in ECMAScript 6](https://mths.be/es6#sec-array.of).
+[![Build Status][travis-svg]][travis-url]
+[![dependency status][deps-svg]][deps-url]
+[![dev dependency status][dev-deps-svg]][dev-deps-url]
+[![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
 
-## Installation
+[![npm badge][npm-badge-png]][package-url]
 
-In a browser:
+An ES2015 spec-compliant `Array.of` shim. Invoke its "shim" method to shim `Array.of` if it is unavailable or noncompliant.
 
-```html
-<script src="array-of.js"></script>
-```
+This package implements the [es-shim API](https://github.com/es-shims/api) interface. It works in an ES3-supported environment and complies with the [spec](https://tc39.es/ecma262/#sec-array.of).
 
-Via [npm](https://www.npmjs.com/):
-
-```bash
-npm install array.of
-```
-
-Then, in [Node.js](https://nodejs.org/):
-
+Most common usage:
 ```js
-require('array.of');
+var assert = require('assert');
+var arrayOf = require('array.of');
 
-// On Windows and on Mac systems with default settings, case doesn’t matter,
-// which allows you to do this instead:
-require('Array.of');
+assert.deepEqual(arrayOf(1, 2, 3), [1, 2, 3]);
+
+if (!Array.of) {
+	arrayOf.shim();
+}
+
+assert.deepEqual(Array.of(1, 2, 3), [1, 2, 3]);
 ```
+
+## Tests
+Simply clone the repo, `npm install`, and run `npm test`
 
 ## Author
 
@@ -32,6 +35,16 @@ require('Array.of');
 |---|
 | [Mathias Bynens](https://mathiasbynens.be/) |
 
-## License
-
-This polyfill is available under the [MIT](https://mths.be/mit) license.
+[package-url]: https://npmjs.com/package/array.of
+[npm-version-svg]: http://versionbadg.es/mathiasbynens/Array.of.svg
+[travis-svg]: https://travis-ci.org/mathiasbynens/Array.of.svg
+[travis-url]: https://travis-ci.org/mathiasbynens/Array.of
+[deps-svg]: https://david-dm.org/mathiasbynens/Array.of.svg
+[deps-url]: https://david-dm.org/mathiasbynens/Array.of
+[dev-deps-svg]: https://david-dm.org/mathiasbynens/Array.of/dev-status.svg
+[dev-deps-url]: https://david-dm.org/mathiasbynens/Array.of#info=devDependencies
+[npm-badge-png]: https://nodei.co/npm/array.of.png?downloads=true&stars=true
+[license-image]: http://img.shields.io/npm/l/array.of.svg
+[license-url]: LICENSE
+[downloads-image]: http://img.shields.io/npm/dm/array.of.svg
+[downloads-url]: http://npm-stat.com/charts.html?package=array.of
