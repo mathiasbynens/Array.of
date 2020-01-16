@@ -4,12 +4,23 @@
 	"extends": "@ljharb",
 
 	"rules": {
+		"func-name-matching": [1],
 		"global-require": [0],
+		"max-lines-per-function": [1],
 		"max-statements": [2, 14],
 		"no-invalid-this": [0],
 		"no-magic-numbers": [0],
 		"quote-props": [2, "always"],
 		"spaced-comment": [1],
 		"strict": [0]
-	}
+	},
+
+	"overrides": [
+		{
+			"files": "test/**",
+			"rules": {
+				"max-len": 0,
+			},
+		},
+	],
 }

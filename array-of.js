@@ -1,6 +1,7 @@
 /*! https://mths.be/array-of v0.1.0 by @mathias */
 (function () {
 	'use strict';
+
 	var defineProperty = (function () {
 		// IE 8 only supports `Object.defineProperty` on DOM elements
 		try {
@@ -28,10 +29,10 @@
 			value = items[index];
 			if (defineProperty) {
 				defineProperty(result, index, {
-					'value': value,
-					'writable': true,
+					'configurable': true,
 					'enumerable': true,
-					'configurable': true
+					'value': value,
+					'writable': true
 				});
 			} else {
 				result[index] = value;
@@ -43,8 +44,8 @@
 	};
 	if (defineProperty) {
 		defineProperty(Array, 'of', {
-			'value': of,
 			'configurable': true,
+			'value': of,
 			'writable': true
 		});
 	} else {

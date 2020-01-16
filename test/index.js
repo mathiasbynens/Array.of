@@ -10,7 +10,7 @@ require('../array-of.js');
 var arrayLikeObject = { '0': 1, '1': 2, '2': 3, 'length': 3 };
 
 assertEquals(Array.of.length, 0);
-assertEquals(Array.propertyIsEnumerable('of'), false);
+assertEquals(Object.prototype.propertyIsEnumerable.call(Array, 'of'), false);
 
 assertDeepEquals(Array.of('abc'), ['abc']);
 assertDeepEquals(Array.of(undefined), [undefined]);

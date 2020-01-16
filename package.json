@@ -35,8 +35,8 @@
 		"cover": "istanbul cover --report html --verbose --dir coverage test"
 	},
 	"devDependencies": {
-		"eslint": "^1.10.3",
-		"@ljharb/eslint-config": "^1.6.1",
+		"@ljharb/eslint-config": "^15.1.0",
+		"eslint": "^6.8.0",
 		"istanbul": "^0.4.5"
 	}
 }
