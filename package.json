@@ -32,7 +32,7 @@
 		"tests-only": "node test",
 		"posttest": "npx aud",
 		"lint": "eslint .",
-		"cover": "istanbul cover --report html --verbose --dir coverage test"
+		"coverage": "istanbul cover --report html --dir coverage test"
 	},
 	"devDependencies": {
 		"@ljharb/eslint-config": "^15.1.0",
