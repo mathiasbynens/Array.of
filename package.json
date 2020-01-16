@@ -27,14 +27,16 @@
 		"detect.js"
 	],
 	"scripts": {
-		"test": "npm run lint && npm run tests-only",
-		"tests-only": "node tests/tests.js",
+		"pretest": "npm run lint",
+		"test": "npm run tests-only",
+		"tests-only": "node test",
 		"posttest": "npx aud",
-		"lint": "eslint *.js tests/*.js",
-		"cover": "istanbul cover --report html --verbose --dir coverage tests/tests.js"
+		"lint": "eslint .",
+		"cover": "istanbul cover --report html --verbose --dir coverage test"
 	},
 	"devDependencies": {
 		"eslint": "^1.10.3",
-		"@ljharb/eslint-config": "^1.6.1"
+		"@ljharb/eslint-config": "^1.6.1",
+		"istanbul": "^0.4.5"
 	}
 }
