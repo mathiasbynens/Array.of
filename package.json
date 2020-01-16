@@ -3,13 +3,16 @@
 	"version": "0.1.1",
 	"description": "A robust & optimized `Array.of` polyfill, based on the ECMAScript 6 specification.",
 	"homepage": "https://mths.be/array-of",
-	"main": "detect.js",
+	"main": "index.js",
 	"keywords": [
 		"string",
 		"unicode",
 		"es6",
+		"es2015",
 		"ecmascript",
-		"polyfill"
+		"polyfill",
+		"shim",
+		"es-shim API"
 	],
 	"license": "MIT",
 	"author": {
@@ -21,16 +24,11 @@
 		"url": "https://github.com/mathiasbynens/Array.of.git"
 	},
 	"bugs": "https://github.com/mathiasbynens/Array.of/issues",
-	"files": [
-		"LICENSE-MIT.txt",
-		"array-of.js",
-		"detect.js"
-	],
 	"scripts": {
 		"prepublish": "safe-publish-latest",
-		"pretest": "npm run lint",
+		"pretest": "npm run lint && es-shim-api --bound",
 		"test": "npm run tests-only",
-		"tests-only": "node test",
+		"tests-only": "node test && node test/shimmed",
 		"posttest": "npx aud",
 		"lint": "eslint .",
 		"coverage": "istanbul cover --report html --dir coverage test",
@@ -38,12 +36,19 @@
 		"postversion": "auto-changelog && git add CHANGELOG.md && git commit --no-edit --amend && git tag -f \"v$(node -e \"console.log(require('./package.json').version)\")\""
 	},
 	"devDependencies": {
+		"@es-shims/api": "^2.1.2",
 		"@ljharb/eslint-config": "^15.1.0",
 		"auto-changelog": "^1.16.2",
 		"eslint": "^6.8.0",
+		"functions-have-names": "^1.2.0",
 		"istanbul": "^0.4.5",
 		"object.assign": "^4.1.0",
-		"safe-publish-latest": "^1.1.4"
+		"safe-publish-latest": "^1.1.4",
+		"tape": "^5.0.0-next.3"
+	},
+	"dependencies": {
+		"define-properties": "^1.1.3",
+		"es-abstract": "^1.17.2"
 	},
 	"auto-changelog": {
 		"output": "CHANGELOG.md",
