@@ -1,6 +1,6 @@
 {
 	"name": "array.of",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A robust & optimized `Array.of` polyfill, based on the ECMAScript 6 specification.",
 	"homepage": "https://mths.be/array-of",
 	"main": "index.js",

@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.1](https://github.com/mathiasbynens/Array.of/compare/v1.0.0...v1.0.1) - 2021-12-09
+
+### Commits
+
+- [actions] reuse common workflows [`a2b6e92`](https://github.com/mathiasbynens/Array.of/commit/a2b6e928ebf3792b99ced1002f3719fb8e812464)
+- [Dev Deps] update `eslint`, `@ljharb/eslint-config`, `@es-shims/api`, `auto-changelog`, `functions-have-names`, `object.assign`, `safe-publish-latest`, `tape`; add `aud`, `nyc` [`8a13016`](https://github.com/mathiasbynens/Array.of/commit/8a1301652568f47500e66923d2641d7c1de19892)
+- [meta] simplify "exports" [`33ff97a`](https://github.com/mathiasbynens/Array.of/commit/33ff97ade7615958938555ea9f2aaa209e4dc785)
+- [meta] do not publish workflow files [`aa17a11`](https://github.com/mathiasbynens/Array.of/commit/aa17a111282400d74f2532c8afa2d68751708675)
+- [Deps] update `es-abstract` [`37dae31`](https://github.com/mathiasbynens/Array.of/commit/37dae312bf12af79de228c621411529de42037ac)
+
 ## [v1.0.0](https://github.com/mathiasbynens/Array.of/compare/v0.1.1...v1.0.0) - 2020-01-16
 
 ### Commits
