@@ -6,7 +6,6 @@
 	"rules": {
 		"func-name-matching": 1,
 		"id-length": 0,
-		"max-statements": [2, 14],
 		"new-cap": [2, {
 			"capIsNewExceptions": [
 				"ArrayCreate",
@@ -18,7 +17,6 @@
 			],
 		}],
 		"no-magic-numbers": 0,
-		"operator-linebreak": [2, "before"],
 		"quote-props": [2, "always"],
 	},
 
