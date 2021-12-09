@@ -5,37 +5,11 @@
 	"homepage": "https://mths.be/array-of",
 	"main": "index.js",
 	"exports": {
-		".": [
-			{
-				"default": "./index.js"
-			},
-			"./index.js"
-		],
-		"./auto": [
-			{
-				"default": "./auto.js"
-			},
-			"./auto.js"
-		],
-		"./shim": [
-			{
-				"default": "./shim.js"
-			},
-			"./shim.js"
-		],
-		"./polyfill": [
-			{
-				"default": "./polyfill.js"
-			},
-			"./polyfill.js"
-		],
-		"./implementation": [
-			{
-				"default": "./implementation.js"
-			},
-			"./implementation.js"
-		],
-		"./package": "./package.json",
+		".": "./index.js",
+		"./auto": "./auto.js",
+		"./polyfill": "./polyfill.js",
+		"./implementation": "./implementation.js",
+		"./shim": "./shim.js",
 		"./package.json": "./package.json"
 	},
 	"keywords": [
