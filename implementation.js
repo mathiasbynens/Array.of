@@ -1,11 +1,11 @@
 'use strict';
 
-var ArrayCreate = require('es-abstract/2021/ArrayCreate');
-// var Construct = require('es-abstract/2021/Construct');
-var CreateDataPropertyOrThrow = require('es-abstract/2021/CreateDataPropertyOrThrow');
-var IsConstructor = require('es-abstract/2021/IsConstructor');
-var Set = require('es-abstract/2021/Set');
-var ToString = require('es-abstract/2021/ToString');
+var ArrayCreate = require('es-abstract/2023/ArrayCreate');
+// var Construct = require('es-abstract/2023/Construct');
+var CreateDataPropertyOrThrow = require('es-abstract/2023/CreateDataPropertyOrThrow');
+var IsConstructor = require('es-abstract/2023/IsConstructor');
+var Set = require('es-abstract/2023/Set');
+var ToString = require('es-abstract/2023/ToString');
 
 module.exports = function of() {
 	var len = arguments.length;
