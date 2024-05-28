@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.3](https://github.com/mathiasbynens/Array.of/compare/v1.0.2...v1.0.3) - 2024-05-28
+
+### Commits
+
+- [Refactor] use ES2024 AO implementations [`a82ccc8`](https://github.com/mathiasbynens/Array.of/commit/a82ccc8cb7645e2bc88a89b12d849a0073eff550)
+- [Dev Deps] update `@es-shims/api`, `@ljharb/eslint-config`, `object.assign`, `tape` [`b27c861`](https://github.com/mathiasbynens/Array.of/commit/b27c861ebc26c10116ae6359ef87237dcea7f7b0)
+- [Deps] update `define-properties`, `es-abstract` [`a0e3eba`](https://github.com/mathiasbynens/Array.of/commit/a0e3eba1a021e63f539ab3185fdd3c626efb3e61)
+- [meta] add `SECURITY.md` [`559306d`](https://github.com/mathiasbynens/Array.of/commit/559306d441fceb7db8324065dc131bae8f23d771)
+
 ## [v1.0.2](https://github.com/mathiasbynens/Array.of/compare/v1.0.1...v1.0.2) - 2023-08-27
 
 ### Commits
