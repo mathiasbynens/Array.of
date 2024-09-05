@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.0.4](https://github.com/mathiasbynens/Array.of/compare/v1.0.3...v1.0.4) - 2024-09-04
+
+### Fixed
+
+- [Fix] bind the index so the builtin is not mutated [`#12`](https://github.com/mathiasbynens/Array.of/issues/12)
+
+### Commits
+
+- [Tests] replace `aud` with `npm audit` [`c603988`](https://github.com/mathiasbynens/Array.of/commit/c603988960a347f21b808e08a29b3b79a8cadb4b)
+- [meta] add missing `engines.node` [`e3f52cc`](https://github.com/mathiasbynens/Array.of/commit/e3f52ccb1578c4571452ba30581cb66a231b48d5)
+- [Dev Deps] update `@es-shims/api` [`f7f79ac`](https://github.com/mathiasbynens/Array.of/commit/f7f79ac96240a4e9880350de8d91e11645cf52e4)
+- [Dev Deps] update `tape` [`7b68b4f`](https://github.com/mathiasbynens/Array.of/commit/7b68b4f63dd758e36fe3a22baee1f5e3fb85953f)
+- [Dev Deps] add missing peer dep [`e69efb3`](https://github.com/mathiasbynens/Array.of/commit/e69efb3838fa8540073cf1872a542710e5067dc4)
+
 ## [v1.0.3](https://github.com/mathiasbynens/Array.of/compare/v1.0.2...v1.0.3) - 2024-05-28
 
 ### Commits
